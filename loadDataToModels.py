@@ -1,3 +1,13 @@
+# Setting up environment to use existing models
+import os, django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uber_challenge.settings
+django.setup()
+
+# Import models
+from film.models import
+
+# Setup MongoDB
 from pymongo import MongoClient
 import json
 import requests
@@ -16,10 +26,4 @@ data = json.loads(r.text)
 
 for i in range(len(data)):
     curr = data[i]
-    # Remove unnecessary field
-    if curr.has_key('smile_again_jenny_lee') == True:
-        del curr['smile_again_jenny_lee']
-    # # Insert manual id field for url query
-    # curr['id'] = i + 1
-    # Insert into database
-    coll.insert_one(curr)
+    # @TODO: Create Models According to Data and Save to the DataBase
