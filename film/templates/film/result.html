@@ -1,0 +1,41 @@
+{% if result_locations and result_detail %}
+  {% if result_detail %}
+    <h1>{{ result_detail.title }}</h1>
+
+    <ul>
+      <li>Release Year: {{ result_detail.release_year }}</li>
+      <li>Production Company: {{ result_detail.production_company }}</li>
+      <li>Distributor: {{ result_detail.distributor }}</li>
+      <li>Writer: {{ result_detail.writer }}</li>
+      <li>Director: {{ result_detail.director }}</li>
+      <li>Actors:
+        <ul>
+          {% if result_detail.actor_1 %}
+            <li>{{ result_detail.actor_1 }}</li>
+          {% endif %}
+          {% if result_detail.actor_2 %}
+            <li>{{ result_detail.actor_2 }}</li>
+          {% endif %}
+          {% if result_detail.actor_3 %}
+            <li>{{ result_detail.actor_3 }}</li>
+          {% endif %}
+        </ul>
+      </li>
+      <li>Fun Facts: {{ result_detail.fun_facts }}</li>
+    </ul>
+  {% endif %}
+
+  <h4>Film Locations in SF</h4>
+  {% if result_locations %}
+    <ul>
+    {% for location in result_locations %}
+      <li>{{ location }}</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <blockquote><p>No Locations are available.</p></blockquote>
+  {% endif %}
+
+{% else %}
+  <h1>No result found</h1>
+{% endif %}

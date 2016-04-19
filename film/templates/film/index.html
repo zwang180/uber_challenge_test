@@ -4,6 +4,11 @@
 
 <h1>Film List(SF)</h1>
 
+<form type="GET" action="{% url 'film:result' %}">
+    <input type="text" name="search_film_name"  placeholder="Search By Film Name" >
+    <button type="submit" >Submit</button>
+</form>
+
 {% if film_name_list %}
   <ul>
   {% for film_name in film_name_list %}

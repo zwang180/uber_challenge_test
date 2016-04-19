@@ -21,3 +21,13 @@ def detail(request, title):
     film_locations = coll.find({'title': title}).distinct('locations')
     film_detail = coll.find_one({'title': title})
     return render(request, 'film/detail.html', {'film_detail': film_detail, 'film_locations': film_locations})
+
+def result(request):
+    client = MongoClient()
+    db = client.uber_challenge
+    coll = db.film
+    query = request.GET ['search_film_name']
+    result_locations = coll.find({'title': query}).distinct('locations')
+    result_detail = coll.find_one({'title': query})
+
+    return render(request, 'film/result.html', {'result_locations': result_locations, 'result_detail': result_detail})
