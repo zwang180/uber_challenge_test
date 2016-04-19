@@ -63,7 +63,10 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
 # To Do Next
 
 1. Major Change
-  Currently, because the Django does not offer direct fully support to MongoDB, the data is preload into the database by running loadData.py and thus no Django model is created inside models.py. The next step is to switch to customized Django models by finishing the new python script loadDataToModels.py.
+ 
+  1.1 Currently, because the Django does not offer direct fully support to MongoDB, the data is preload into the database by running loadData.py and thus no Django model is created inside models.py. The next step is to switch to customized Django models by finishing the new python script loadDataToModels.py.
+
+  1.2 More cool features such as google map API.
 2. Minor and Performance Change
   
   2.1 Create a new serperate index page that have a search bar and a link to the full list.
