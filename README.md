@@ -71,11 +71,11 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
   1.2 More cool features such as google map API.
 2. Minor and Performance Change
   
-  2.1 Create a new serperate index page that have a search bar and a link to the full list.
+  ~~2.1 Create a new serperate index page that have a search bar and a link to the full list.~~
   
-  2.2 Implement more general search function(ignore space, case insensitive, search by other field) by regex and other tools.
-  
-  2.3 Add static files(especially CSS and Javascript) to beautify the website.
+  2.2 Add static files(especially CSS and Javascript) to beautify the website. !IMPORTANT!
+
+  2.3 Implement more general search function(ignore space, case insensitive, search by other field) by regex and other tools.
 
   2.4 Deploy the website on AWS.
   
