@@ -3,18 +3,20 @@
 Doing uber code challenge (SF Film Locations) to learn basic technique for internship
 
 # Setup Environment
+All of the following tutorials are designed for Mac OS, for other platform, please refer to official documents for guidance. 
+
 Assuming you already have python(3.5), pip and homebrew installed on your computer. If any of the following commands fail to run, add sudo at the very beginning and try again. If it still doesn't work, please refer to official documentations.
 
 1. Install Django
 
-  inside your terminal do
+  Inside your terminal do
   ```
   pip install django
   ```
   
 2. Install MongoDB
 
-  inside your terminal do
+  Inside your terminal do
   ```
   brew update
   brew install mongodb
@@ -41,11 +43,11 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
   ```
 5. Start the server and the database
 
-  First start the database in terminal(assume the path of the source code, i.e. the directory containing manage.py is /some/path/to/source/)
+  First start the database server, in terminal(assume the path of the source code, i.e. the directory containing manage.py is /some/path/to/source/), do
   ```
   mongod --dbpath /some/path/to/source/film/data/
   ```
-  Next, if this is the first time you run the code, dump the data to your local database
+  Next, if this is the first time you run the code, dump the data to your local database by running loadData.py
   ```
   python loadData.py
   ```
@@ -56,7 +58,24 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
   python manage.py runserver
   ```
   Then the website is ready to view at http://localhost:8000/film/ (by default)
-  
+
 # Other issues
-  The FastSetup_Uber.scpt is a AppleScript that could start both server in two seperate terminal tabs and also dump data in the third tab in order to give you a free tab to do git commands. There is also a App version of the script. So if you are using Mac OS(Scirpt is written in El Captain), you could modify the path in the script and make use of it.
+  The FastSetup_Uber.scpt is an AppleScript that could start both servers in two seperate terminal tabs and also dump data in the third tab in order to give you a free tab to do git commands. There is also an App version of the script. So if you are using Mac OS(Scirpt was written in El Captain), you could modify the file path in the script and make use of it.
+  
+# To Do Next
+
+1. Major Change
+ 
+  1.1 Currently, because the Django does not offer direct fully support to MongoDB, the data is preload into the database by running loadData.py and thus no Django model is created inside models.py. The next step is to switch to customized Django models by finishing the new python script loadDataToModels.py.
+
+  1.2 More cool features such as google map API.
+2. Minor and Performance Change
+  
+  2.1 Create a new serperate index page that have a search bar and a link to the full list.
+  
+  2.2 Implement more general search function(ignore space, case insensitive, search by other field) by regex and other tools.
+  
+  2.3 Add static files(especially CSS and Javascript) to beautify the website.
+
+  2.4 Deploy the website on AWS.
   
