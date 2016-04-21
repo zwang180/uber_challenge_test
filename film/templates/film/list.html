@@ -1,0 +1,11 @@
+<h1>Full Film List</h1>
+
+{% if film_name_list %}
+  <ul>
+  {% for film_name in film_name_list %}
+    <li><a href = "{% url 'film:detail' film_name %}">{{ film_name }}</a></li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>No films are available.</p>
+{% endif %}

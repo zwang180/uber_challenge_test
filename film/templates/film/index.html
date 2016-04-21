@@ -1,20 +1,14 @@
-<!-- {% load staticfiles %}
+{% load staticfiles %}
 
-<link rel = "stylesheet" type = "text/css" href = "{% static 'polls/style.css' %}" /> -->
+<link rel = "stylesheet" type = "text/css" href = "{% static 'film/index.css' %}" />
 
-<h1>Film List(SF)</h1>
+
+<h1>Welcome to SF Film Locations</h1>
 
 <form type="GET" action="{% url 'film:result' %}">
     <input type="text" name="search_film_name"  placeholder="Search By Film Name" >
+    <br>
     <button type="submit" >Submit</button>
 </form>
 
-{% if film_name_list %}
-  <ul>
-  {% for film_name in film_name_list %}
-    <li><a href = "{% url 'film:detail' film_name %}">{{ film_name }}</a></li>
-  {% endfor %}
-  </ul>
-{% else %}
-  <p>No films are available.</p>
-{% endif %}
+<a href = "{% url 'film:list' %}">View Full List</a>

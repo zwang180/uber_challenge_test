@@ -3,8 +3,8 @@ from django.views import generic
 from pymongo import MongoClient
 
 # Create your views here.
-class IndexView(generic.ListView):
-    template_name = 'film/index.html'
+class fullList(generic.ListView):
+    template_name = 'film/list.html'
     context_object_name = 'film_name_list'
 
     def get_queryset(self):
@@ -13,6 +13,8 @@ class IndexView(generic.ListView):
         coll = db.film
         return coll.distinct('title')
 
+def index(request):
+    return render(request, 'film/index.html');
 
 def detail(request, title):
     client = MongoClient()
@@ -27,7 +29,6 @@ def result(request):
     db = client.uber_challenge
     coll = db.film
     query = request.GET ['search_film_name']
-    result_locations = coll.find({'title': query}).distinct('locations')
-    result_detail = coll.find_one({'title': query})
+    results = coll.find({'title': query}).distinct('title')
 
-    return render(request, 'film/result.html', {'result_locations': result_locations, 'result_detail': result_detail})
+    return render(request, 'film/result.html', {'results': results})
