@@ -1,6 +1,6 @@
 # Uber Challenge Test
 
-Doing uber code challenge (SF Film Locations) to learn basic technique for internship
+Doing uber code challenge (SF Film Locations) to learn basic technique for internship. The website can be view at https://sffilm.herokuapp.com/ and the database is holding on mLab.
 
 # Setup Environment
 All of the following tutorials are designed for Mac OS, for other platform, please refer to official documents for guidance. 
@@ -47,9 +47,10 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
   ```
   mongod --dbpath /some/path/to/source/film/data/
   ```
-  Next, if this is the first time you run the code, dump the data to your local database by running loadData.py
+  Next, if this is the first time you run the code, dump the data to your local database by running loadData.py(if you just want to query the data) or run loadDataToModels.py(if you would like to work with Film model)
   ```
   python loadData.py
+  python loadDataToModels.py
   ```
   Please make sure your MongoDB server is running while you run the above command
   
@@ -57,26 +58,19 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
   ```
   python manage.py runserver
   ```
-  Then the website is ready to view at http://localhost:8000/film/ (by default)
+  Then the website is ready to view at http://localhost:8000/ (by default)
 
 # Other issues
-  The FastSetup_Uber.scpt is an AppleScript that could start both servers in two seperate terminal tabs and also dump data in the third tab in order to give you a free tab to do git commands. There is also an App version of the script. So if you are using Mac OS(Scirpt was written in El Captain), you could modify the file path in the script and make use of it.
+  The FastSetup_Uber.scpt is an AppleScript that could start both servers in two seperate terminal tabs and also open the third tab in order to give you a free tab to do git commands or dump data. There is also an App version of the script. So if you are using Mac OS(Scirpt was written in El Captain), you could modify the file path in the script and make use of it.
   
 # To Do Next
 
 1. Major Change
- 
-  1.1 Currently, because the Django does not offer direct fully support to MongoDB, the data is preload into the database by running loadData.py and thus no Django model is created inside models.py. The next step is to switch to customized Django models by finishing the new python script loadDataToModels.py.
 
-  1.2 More cool features such as google map API.
+  More cool features such as google map API.
 2. Minor and Performance Change
   
-  ~~2.1 Create a new serperate index page that have a search bar and a link to the full list.~~
-  
-  2.2 Add static files(especially CSS and Javascript) to beautify the website. !IMPORTANT!
+  2.1 Add static files(especially CSS and Javascript) to beautify the website. !IMPORTANT!
 
-  2.3 Implement more general search function(ignore space, case insensitive, search by other field) by regex and other tools.
+  2.2 Implement more general search function(ignore space, case insensitive, search by other field) by regex and other tools.
 
-  2.4 Deploy the website on AWS.
-  
-WILL BE UPDATED LATER!
