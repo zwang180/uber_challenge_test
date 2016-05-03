@@ -79,3 +79,4 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
 
   2.4 Deploy the website on AWS.
   
+WILL BE UPDATED LATER!
