@@ -73,4 +73,6 @@ Assuming you already have python(3.5), pip and homebrew installed on your comput
   2.1 Add static files(especially CSS and Javascript) to beautify the website. !IMPORTANT!
 
   2.2 Implement more general search function(ignore space, case insensitive, search by other field) by regex and other tools.
+  
+  2.3 Figure out how to create superuser. (wait for mongoengine to update hopefully).
 
