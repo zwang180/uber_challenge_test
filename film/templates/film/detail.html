@@ -2,8 +2,8 @@
   <h1>{{ film_detail.title }}</h1>
 
   <ul>
-    <li>Release Year: {{ film_detail.release_year }}</li>
-    <li>Production Company: {{ film_detail.production_company }}</li>
+    <li>Release Year: {{ film_detail.year }}</li>
+    <li>Production Company: {{ film_detail.company }}</li>
     <li>Distributor: {{ film_detail.distributor }}</li>
     <li>Writer: {{ film_detail.writer }}</li>
     <li>Director: {{ film_detail.director }}</li>
@@ -20,7 +20,7 @@
         {% endif %}
       </ul>
     </li>
-    <li>Fun Facts: {{ film_detail.fun_facts }}</li>
+    <li>Fun Facts: {{ film_detail.funfacts }}</li>
   </ul>
 {% endif %}
 

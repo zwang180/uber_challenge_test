@@ -5,7 +5,7 @@ import requests
 # Connect to database
 client = MongoClient()
 db = client.uber_challenge
-coll = db.film
+coll = db.film_old
 
 # Remove old data before getting new data
 coll.remove()
