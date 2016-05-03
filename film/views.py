@@ -15,7 +15,7 @@ class fullList(generic.ListView):
         # client = MongoClient()
         # db = client.uber_challenge
         # coll = db.film
-        return Film.objects.distinct('title')
+        return Film.objects.distinct('title').order_by('title')
 
 def detail(request, title):
     # client = MongoClient()
@@ -31,6 +31,6 @@ def result(request):
     # db = client.uber_challenge
     # coll = db.film
     query = request.GET ['search_film_name']
-    results = Film.objects.filter(title=query).distinct('title')
+    results = Film.objects.filter(title=query).distinct('title').order_by('title')
 
     return render(request, 'film/result.html', {'results': results})

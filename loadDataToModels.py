@@ -13,10 +13,10 @@ import json
 import requests
 
 # Connect to database
-# client = MongoClient("mongodb://zwang180:Aa527710546@ds059155.mlab.com:59155/sf_film")
-client = MongoClient()
-# db = client.sf_film
-db = client.uber_challenge
+client = MongoClient("mongodb://zwang180:Aa527710546@ds059155.mlab.com:59155/sf_film")
+# client = MongoClient()
+db = client.sf_film
+# db = client.uber_challenge
 coll = db.film
 
 # Remove old data before getting new data
@@ -25,8 +25,9 @@ coll.remove()
 # Dump the data from provided API endpoint
 r = requests.get('https://data.sfgov.org/resource/yitu-d5am.json')
 data = json.loads(r.text)
+total = len(data)
 
-for i in range(len(data)):
+for i in range(total):
     curr = data[i]
 
     if curr.has_key('smile_again_jenny_lee') == True:
@@ -48,4 +49,5 @@ for i in range(len(data)):
     if curr.has_key('fun_facts') == True:
         doc.funfacts = curr['fun_facts']
     doc.save()
+    print(str(i + 1) + '/' + str(total))
 # TODO Save to mLab database

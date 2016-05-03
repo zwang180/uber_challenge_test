@@ -83,7 +83,8 @@ DATABASES = {
 }
 
 # uber_challenge.film?
-connect('uber_challenge')
+# connect('uber_challenge')
+connect(host='mongodb://zwang180:Aa527710546@ds059155.mlab.com:59155/sf_film', alias='default')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
