@@ -5,7 +5,7 @@ Doing uber code challenge (SF Film Locations) to learn basic technique for inter
 # Setup Environment
 All of the following tutorials are designed for Mac OS, for other platform, please refer to official documents for guidance. 
 
-Assuming you already have python(3.5), pip and homebrew installed on your computer. If any of the following commands fail to run, add sudo at the very beginning and try again. If it still doesn't work, please refer to official documentations.
+Assuming you already have python(2.7), pip and homebrew installed on your computer. If any of the following commands fail to run, add sudo at the very beginning and try again. If it still doesn't work, please refer to official documentations.
 
 1. Install Django
 
