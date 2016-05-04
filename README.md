@@ -75,4 +75,8 @@ Assuming you already have python(2.7), pip and homebrew installed on your comput
   2.2 Implement more general search function(ignore space, case insensitive, search by other field) by regex and other tools.
   
   2.3 Figure out how to create superuser. (wait for mongoengine to update for Django 1.9 hopefully, see https://github.com/MongoEngine/django-mongoengine).
+  
+  P.S: mongoengine==0.9.0 && pymongo==2.8.1 && proper settings https://mongoengine.readthedocs.io/en/v0.9.0/django.html
+  
+  result in sucess for creating superuser but failure when login to admin site.
 
